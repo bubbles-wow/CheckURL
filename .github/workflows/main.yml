@@ -24,3 +24,9 @@ jobs:
       - name: Check 📡
         id: check
         run: python3 Check.py || echo "Exit code was $?"
+
+      - name: Upload Artifact 📤
+        uses: actions/upload-artifact@v2
+        with:
+          name: outputs.txt
+          path: outputs.txt

@@ -27,6 +27,6 @@ def check_url(url):
     except requests.RequestException:
         print(f"An error occur in checking URL: {url}")
 
-with concurrent.futures.ThreadPoolExecutor(max_workers=30) as executor:
+with concurrent.futures.ThreadPoolExecutor(max_workers=50) as executor:
     executor.map(check_url, url_list)
 
