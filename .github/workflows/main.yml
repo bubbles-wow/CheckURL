@@ -23,10 +23,15 @@ jobs:
 
       - name: Check 📡
         id: check
-        run: python3 Check.py || echo "Exit code was $?"
+        run: |
+          python3 Check.py || echo "Exit code was $?"
+          if [ -f outputs.txt ]; then
+            echo "upload=true" >> $GITHUB_OUTPUT
+          fi
 
       - name: Upload Artifact 📤
         uses: actions/upload-artifact@v2
+        if: steps.check.outputs.upload == 'true'
         with:
           name: outputs.txt
           path: outputs.txt
