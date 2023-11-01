@@ -35,4 +35,3 @@ jobs:
         with:
           name: outputs
           path: outputs.txt
-          zip-artifact: false
