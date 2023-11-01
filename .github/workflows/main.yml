@@ -33,5 +33,4 @@ jobs:
         uses: actions/upload-artifact@v2
         if: steps.check.outputs.upload == 'true'
         with:
-          name: outputs.txt
           path: outputs.txt
