@@ -18,12 +18,13 @@ def check_url(url):
     try:
         response = requests.head(url)
         if response.status_code == 200:
-            print(f"Valid URL: {url} ! Status Code: {response.status_code}")
+            #print(f"Valid URL: {url} ! Status Code: {response.status_code}")
+            print(url)
             with open(os.path.join(dir, "outputs.txt"), "a") as f:
                 f.write(url + "\n")
                 f.close()
-        else:
-            print(f"Invaild URL: {url} ! Status Code: {response.status_code}")
+        #else:
+            #print(f"Invaild URL: {url} ! Status Code: {response.status_code}")
     except requests.RequestException:
         print(f"An error occur in checking URL: {url}")
 
